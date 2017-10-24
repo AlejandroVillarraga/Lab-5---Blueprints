@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        
+        <title>Blueprints</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <script src="/webjars/jquery/jquery.min.js"></script>
+        <script src="/webjars/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <link rel="stylesheet"
+              href="/webjars/bootstrap/3.3.7/css/bootstrap.min.css" />
+        <script src="js/apimock.js"></script>
+        <script src="js/app.js"></script>
+    
+        <style>
+            #izquierda { position: relative; width: 50%; top: 0; left: 0; background: #b3e5fc; float: left; height: 500px; } 
+            #derecha { position: relative; width: 50%; top: 0; right: 0; background: #b3e5fc; float: right; height: 500px; } 
+            .col{
+                border-right: 5PX solid;
+                border-top: 5PX solid; 
+                border-bottom: 5PX solid;
+                border-left: 5PX solid;
+                background: #ffffff;
+            }
+            
+            #miclase{
+                background-color: #ef6c00;                
+            }
+            
+            
+            div.container {
+                width: 100%;
+            }
+
+            nav {
+                float: left;
+                margin: 0;
+                padding: 1em;
+            }
+
+            nav ul {
+                list-style-type: none;
+                padding: 0;
+            }
+
+            nav ul a {
+                text-decoration: none;
+            }
+
+            article {
+                margin-left: 450px;
+                border-left: 1px solid gray;
+                padding: 1em;
+                overflow: hidden;
+            }
+            form{
+                margin: 20px 0;
+            }
+            form input, button{
+                padding: 5px;
+            }
+            table{
+                width: 90%;
+                margin-bottom: 20px;
+                border-collapse: collapse;
+                
+                
+            }
+            table, th, td{
+                border: 3px solid black;
+            }
+            table th, table td{
+                padding: 10px;
+                text-align: left;
+            }
+            
+            header{
+                text-align: start;
+                background-color: #b3e5fc;
+            }
+            
+            
+        </style>
+    </head>
+    
+    <body style="background-color:#b3e5fc" onLoad="module.init()">        
+        <div id="col-sm-4" style="background-color: sandybrown">
+            <header >
+                
+                <h1>BluePrints</h1>
+            </header>
+                <label>Author:</label>
+                <input id="nameAuthor" type="text" size="50" maxlength="100" value="" name="nombre">
+                <button class="btn btn-primary" type = "button" onclick="module.actualizarTabla(document.getElementById('nameAuthor').value)">Get Blueprints</button>       
+            
+        </div>
+        <div id="izquierda">
+            <header>
+                <h1 id="author"></h1>
+            </header>
+           
+                <table id="tabla" class="miclase">
+                    <tr>
+                        <th id="Bpname">Blue Prints Name</th>
+                        <th id="NumPoint">Number of Points</th>
+                        <th id="ButtonOpen">Open</th>
+                    </tr>
+                </table>
+            <header >
+                <h1 id="userpoints"></h1>
+            </header>
+        </div>
+        <div id="derecha" >
+            <div id="divNewBlueprint">     
+                  
+            </div>
+            <div id="nameNewBlueprint">
+            </div>
+            <header>
+                <h1 id="nombrePlano"></h1>
+            </header>
+        <canvas class="col" id="canvas" width="500" height="500" ></canvas> 
+        <div id="divsaveydelete">
+             
+        </div>
+        </div>
+        
+        
+    </body>
+</html>
